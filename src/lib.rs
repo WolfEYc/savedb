@@ -15,7 +15,6 @@ const MYSQL_DATETIME_FORMAT: &'static str = "%Y-%m-%d %H:%M:%S";
 
 pub mod account;
 pub mod purchase;
-pub mod rule1;
 
 #[derive(Parser)]
 #[command(author="Isaac Wolf", version="0.1.0", about="cli for csv parser and uploader", long_about = None)]
@@ -29,11 +28,7 @@ pub enum Command {
     /// Parses and uploads all accounts to the db
     Account,
     /// Parses and uploads all purchases and merchants to the db
-    Purchase,
-    /// Identify abnormally high transactions in a customers’ spending
-    Rule1,
-    /// Identify customer transactions that occurred in a different state from the customers’ primary state
-    Rule2,
+    Purchase
 }
 
 pub fn build_reader() -> Reader<Stdin> {

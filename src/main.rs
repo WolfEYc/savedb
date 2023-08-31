@@ -12,7 +12,5 @@ async fn main() -> Result<(), Box<dyn Error>> {
     match cli.command {
         Command::Account => account::parse_and_upload(reader, &pool).await,
         Command::Purchase => purchase::parse_and_upload(reader, &pool).await,
-        Command::Rule1 => todo!(),
-        Command::Rule2 => todo!(),
     }
 }
